@@ -52,7 +52,7 @@ const TableSearch: FC<tableSearchType> = ({
       </div>
       <div className="relative pt-3.5 pb-3.5">
         <label
-          className="absolute text-xs top-1.5 left-3 bg-white font-semibold text-gray-600 z-50"
+          className="absolute text-xs top-1.5 left-3 bg-white font-semibold text-gray-600"
           htmlFor="date"
         >
           Creation Date

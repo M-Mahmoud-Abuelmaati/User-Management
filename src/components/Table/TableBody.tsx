@@ -66,7 +66,7 @@ const TableBody: FC<{
             user.status === 'Locked' ? 'bg-red-300/50' : 'bg-green-300/50'
           } text-[10px] font-bold`}
         >
-          {user.name.charAt(0) + user.name.split(' ')[1].charAt(0)}
+          {user.name.charAt(0) + (user.name.split(' ')[1] ? user.name.split(' ')[1].charAt(0) : '')}
         </span>{' '}
         {user.name}
       </th>

@@ -45,7 +45,7 @@ const TableHeader: FC<{
             size={32}
           />
           <BiBlock
-            onClick={() => onHandleDeleteSelected()}
+            onClick={() => onHandleDeleteSelected(tableData.tableSelected)}
             className="bg-gray-200 p-1 rounded cursor-pointer"
             size={32}
           />

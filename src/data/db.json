@@ -49,15 +49,6 @@
   ],
   "users": [
     {
-      "name": "Mohamed Mahmoud",
-      "userName": "Mohamed Mahmoud",
-      "email": "mohamed.mahmoud.abuelmaati@gmail.com",
-      "group": "Office",
-      "status": "Active",
-      "createdAt": 1669844273032,
-      "id": 1
-    },
-    {
       "name": "Ahmed Mahmoud",
       "userName": "Ahmed Mahmoud",
       "email": "ahmed.mahmoud.abuelmaati@gmail.com",
@@ -76,13 +67,31 @@
       "id": 3
     },
     {
-      "name": "Testing Testing",
-      "userName": "Testing Testing",
-      "email": "test@gm.com",
+      "name": "Test",
+      "userName": "Test",
+      "email": "GM@gmail.com",
+      "group": "Office",
+      "status": "Active",
+      "createdAt": 1669892462424,
+      "id": 5
+    },
+    {
+      "name": "Ahmed",
+      "userName": "Mahmoud",
+      "email": "ag@gmail.com",
       "group": "Manager",
       "status": "Active",
-      "createdAt": 1669848273032,
-      "id": 4
+      "createdAt": 1669893883793,
+      "id": 6
+    },
+    {
+      "name": "John Doe",
+      "userName": "John Doe",
+      "email": "john.doe@email.com",
+      "group": "Office",
+      "status": "Active",
+      "createdAt": 1669893898775,
+      "id": 7
     }
   ]
 }

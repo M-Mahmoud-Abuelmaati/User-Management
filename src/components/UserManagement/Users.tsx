@@ -19,6 +19,18 @@ const Users: FC = () => {
   const [searchByName, setSearchByName] = useState<string>('');
   const [searchByStatus, setSearchByStatus] = useState<string>('');
   const [searchByDate, setSearchByDate] = useState<Date[]>([]);
+  const [tableSelected, setTableSelected] = useState<
+    { userId: number; checked: boolean }[]
+  >([]);
+
+  useEffect(() => {
+    users.forEach((user) => {
+      setTableSelected((prev) => [
+        ...prev,
+        { userId: user.id, checked: false },
+      ]);
+    });
+  }, [users]);
 
   useEffect(() => {
     globalSearch(users, search, setFilteredUsers);
@@ -48,6 +60,38 @@ const Users: FC = () => {
     setModal(!modal);
   };
 
+  const onHandleSubmitUser = async (
+    fullName: string,
+    userName: string,
+    email: string,
+    group: string
+  ) => {
+    if (fullName && userName && email && group) {
+      const response = await axios.post('http://localhost:4000/users', {
+        name: fullName,
+        userName: userName,
+        email,
+        group,
+        status: 'Active',
+        createdAt: Date.now(),
+      });
+      const user = response.data;
+      setUsers((ps) => [...ps, user]);
+    }
+  };
+
+  const onHandleDeleteSelected = (
+    tableSelected: { userId: number; checked: boolean }[]
+  ) => {
+    tableSelected.forEach(async (val) => {
+      if (val.checked) {
+        await axios.delete(`http://localhost:4000/users/${val.userId}`);
+        setUsers((ps) => ps.filter((u) => u.id !== val.userId));
+        setTableSelected((ps) => ps.filter((t) => t.userId !== val.userId));
+      }
+    });
+  };
+
   const resetAllFilters = () => {
     setSearch('');
     setSearchByName('');
@@ -65,7 +109,11 @@ const Users: FC = () => {
         >
           + Add New
         </button>
-        <Modal modalSettings={{ modal, setModal }} />
+        <Modal
+          modal={modal}
+          setModal={setModal}
+          onHandleSubmitUser={onHandleSubmitUser}
+        />
       </div>
       <div className="bg-white rounded-lg border border-1">
         <TableSearch
@@ -79,7 +127,12 @@ const Users: FC = () => {
           setSearchByStatus={setSearchByStatus}
           resetAllFilters={resetAllFilters}
         />
-        <Table users={filteredUsers} />
+        <Table
+          users={filteredUsers}
+          tableSelected={tableSelected}
+          setTableSelected={setTableSelected}
+          onHandleDeleteSelected={onHandleDeleteSelected}
+        />
       </div>
     </div>
   );
