@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar/Navbar';
 import SidePanel from '../components/SidePanel/SidePanel';
 import { useEffect, useState } from 'react';
 

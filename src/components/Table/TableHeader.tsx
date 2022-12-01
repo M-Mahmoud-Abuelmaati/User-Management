@@ -4,7 +4,7 @@ import { FiLock, FiSettings } from 'react-icons/fi';
 import { BsDownload } from 'react-icons/bs';
 import { FC, useEffect, useState } from 'react';
 
-const TableSettings: FC<{
+const TableHeader: FC<{
   tableData: {
     tableSelected: { userId: number; checked: boolean }[];
     setTableSelected: Function;
@@ -85,4 +85,4 @@ const TableSettings: FC<{
   );
 };
 
-export default TableSettings;
+export default TableHeader;

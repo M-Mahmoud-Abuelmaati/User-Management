@@ -1,6 +1,6 @@
-import TableHead from './TableHead';
 import TableBody from './TableBody';
-import TableSettings from './TableSettings';
+import TableHeader from './TableHeader';
+import TableSubHeader from './TableSubHeader';
 import { FC, useEffect, useState } from 'react';
 import { userType } from '../../types/userType';
 import axios from 'axios';
@@ -33,13 +33,13 @@ const Table: FC<{ users: userType[] }> = ({ users }) => {
 
   return (
     <div className="overflow-x-auto w-full">
-      <TableSettings
+      <TableHeader
         tableData={{ tableSelected, setTableSelected }}
         onHandleDeleteSelected={onHandleDeleteSelected}
       />
       <table className="w-full text-sm text-left text-gray-500">
         <thead className="text-xs text-gray-500 bg-gray-300/50">
-          <TableHead tableData={{ tableSelected, setTableSelected }} />
+          <TableSubHeader tableData={{ tableSelected, setTableSelected }} />
         </thead>
         <tbody>
           {users.map((user) => (

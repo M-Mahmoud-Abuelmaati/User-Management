@@ -3,6 +3,7 @@ import { MdDashboard } from 'react-icons/md';
 import { BsSearch } from 'react-icons/bs';
 import SidePanelItem from './SidePanelItem';
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai';
+import { FaSpinner } from 'react-icons/fa';
 import { FC, useEffect, useState } from 'react';
 import logo from '../../imgs/logo.png';
 import { sidePanelType } from '../../types/userType';
@@ -18,6 +19,7 @@ const SidePanel: FC<{
     sidePanelType[]
   >([]);
   const [search, setSearch] = useState<string>('');
+  const [noSearch, setNoSearch] = useState<string>('Searching');
 
   useEffect(() => {
     axios.get('http://localhost:4000/sidepanelitems').then((response) => {
@@ -34,8 +36,16 @@ const SidePanel: FC<{
 
     const filteredPanelSearch = sidePanelItems.filter(searchFilter);
     setFilteredSidePanelItems(filteredPanelSearch);
+    setNoSearch('Searching');
   }, [sidePanelItems, search]);
 
+  useEffect(() => {
+    if (!filteredSidePanelItems[0]) {
+      setTimeout(() => {
+        setNoSearch('No search found.');
+      }, 3000);
+    }
+  }, [noSearch, filteredSidePanelItems]);
   return (
     <div
       className={`transition-all duration-200 h-screen flex flex-col gap-2 w-60 items-center p-1 bg-[#0e0f22eb] ${
@@ -54,6 +64,14 @@ const SidePanel: FC<{
         <BsSearch className="absolute top-2.5 left-3" />
         {search && (
           <div className="absolute w-full rounded-b-2xl bg-white p-1 text-md">
+            {noSearch === 'Searching' && !filteredSidePanelItems[0] ? (
+              <button className="flex pl-2 items-center cursor-wait" disabled>
+                <FaSpinner className="animate-spin h-5 w-5 mr-3 text-indigo-500" />
+                <h1 className="animate-pulse">{noSearch}</h1>
+              </button>
+            ) : (
+              !filteredSidePanelItems[0] && <h1 className="pl-2">{noSearch}</h1>
+            )}
             {filteredSidePanelItems.map((i) => {
               return i.subItem.map((sItem, idx2) => {
                 if (sItem.name.toLowerCase().includes(search.toLowerCase())) {

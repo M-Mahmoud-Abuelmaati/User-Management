@@ -7,6 +7,18 @@ export interface sidePanelType {
   }[];
 }
 
+export interface tableSearchType {
+  search: string;
+  setSearch: Function;
+  searchByName: string;
+  setSearchByName: Function;
+  searchByStatus: string;
+  setSearchByStatus: Function;
+  searchByDate: string;
+  setSearchByDate: Function;
+  resetAllFilters: Function;
+}
+
 export interface userType {
   id: number;
   name: string;

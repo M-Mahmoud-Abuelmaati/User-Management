@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 
-const TableHead: FC<{
+const TableHeader: FC<{
   tableData: {
     tableSelected: { userId: number; checked: boolean }[];
     setTableSelected: Function;
@@ -66,4 +66,4 @@ const TableHead: FC<{
   );
 };
 
-export default TableHead;
+export default TableHeader;

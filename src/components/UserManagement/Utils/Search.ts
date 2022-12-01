@@ -1,4 +1,4 @@
-import { userType } from '../../types/userType';
+import { userType } from '../../../types/userType';
 import { format } from 'date-fns';
 
 export const globalSearch = (
