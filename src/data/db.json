@@ -65,33 +65,6 @@
       "status": "Active",
       "createdAt": 1669348273032,
       "id": 3
-    },
-    {
-      "name": "Test",
-      "userName": "Test",
-      "email": "GM@gmail.com",
-      "group": "Office",
-      "status": "Active",
-      "createdAt": 1669892462424,
-      "id": 5
-    },
-    {
-      "name": "Ahmed",
-      "userName": "Mahmoud",
-      "email": "ag@gmail.com",
-      "group": "Manager",
-      "status": "Active",
-      "createdAt": 1669893883793,
-      "id": 6
-    },
-    {
-      "name": "John Doe",
-      "userName": "John Doe",
-      "email": "john.doe@email.com",
-      "group": "Office",
-      "status": "Active",
-      "createdAt": 1669893898775,
-      "id": 7
     }
   ]
 }
