@@ -54,14 +54,26 @@ export const searchByStatusFunc = (
 
 export const searchByDateFunc = (
   users: userType[],
-  searchByDate: string,
+  searchByDate: Date[],
   setFilteredUsers: Function
 ) => {
-  const searchFilter = (user: userType) =>
-    [format(user.createdAt, `yyyy-MM-dd`)]
-      .join('')
-      .toLowerCase()
-      .indexOf(searchByDate.toLowerCase()) !== -1;
-  const filteredUsers = users.filter(searchFilter);
-  setFilteredUsers(filteredUsers);
+  if (searchByDate[0]) {
+    const searchFilter = (user: userType) => {
+      const startFrom = format(searchByDate[0], `yyyy-MM-dd`);
+      const endTo = format(searchByDate[1], `yyyy-MM-dd`);
+      if (
+        format(user.createdAt, `yyyy-MM-dd`).indexOf(startFrom) !== -1 ||
+        format(user.createdAt, `yyyy-MM-dd`).indexOf(endTo) !== -1
+      ) {
+        return user;
+      }
+    };
+    const filteredUsers = users.filter(searchFilter);
+    setFilteredUsers(filteredUsers);
+  } else {
+    const searchFilter = (user: userType) =>
+      format(user.createdAt, `yyyy-MM-dd`);
+    const filteredUsers = users.filter(searchFilter);
+    setFilteredUsers(filteredUsers);
+  }
 };

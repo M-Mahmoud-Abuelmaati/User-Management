@@ -18,7 +18,7 @@ const Users: FC = () => {
   const [search, setSearch] = useState<string>('');
   const [searchByName, setSearchByName] = useState<string>('');
   const [searchByStatus, setSearchByStatus] = useState<string>('');
-  const [searchByDate, setSearchByDate] = useState<string>('');
+  const [searchByDate, setSearchByDate] = useState<Date[]>([]);
 
   useEffect(() => {
     globalSearch(users, search, setFilteredUsers);
@@ -35,7 +35,7 @@ const Users: FC = () => {
     searchByNameFunc(users, searchByName, setFilteredUsers);
   }, [searchByName, users]);
   useEffect(() => {
-    searchByDateFunc(users, searchByDate, setFilteredUsers);
+    if (searchByDate) searchByDateFunc(users, searchByDate, setFilteredUsers);
   }, [searchByDate, users]);
 
   useEffect(() => {
@@ -52,9 +52,9 @@ const Users: FC = () => {
     setSearch('');
     setSearchByName('');
     setSearchByStatus('');
-    setSearchByDate('');
+    setSearchByDate([]);
   };
-  
+
   return (
     <div className="bg-gray-100 p-4">
       <div className="flex justify-between p-2 pb-4">

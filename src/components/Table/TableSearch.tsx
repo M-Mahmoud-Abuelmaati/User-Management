@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import DatePicker from 'react-date-picker';
 import { BsSearch } from 'react-icons/bs';
 import { tableSearchType } from '../../types/userType';
 
@@ -51,21 +52,39 @@ const TableSearch: FC<tableSearchType> = ({
       </div>
       <div className="relative pt-3.5 pb-3.5">
         <label
+          className="absolute text-xs top-1.5 left-3 bg-white font-semibold text-gray-600 z-50"
           htmlFor="date"
-          className="absolute text-xs top-1.5 left-3 bg-white font-semibold text-gray-600"
         >
           Creation Date
         </label>
-        <input
-          type="date"
+        <DatePicker
+          name="date"
+          value={searchByDate[0]}
+          format="y/MM/dd"
+          selectRange
+          minDate={new Date('2022-01-01')}
+          maxDate={new Date('2024-01-01')}
+          className={'h-10'}
+          onChange={(date: Date[]) => {
+            if (date === null) {
+              setSearchByDate([]);
+            } else {
+              setSearchByDate(date);
+            }
+          }}
+          calendarClassName="text-sm p-2"
+        />
+        {/* <input
+          type=""
           id="date"
+          multiple={true}
           value={searchByDate}
           onChange={(e) => {
             setSearchByDate(e.target.value);
-            console.log(e.target.value);
+            console.log(e);
           }}
-          className="text-sm p-2 rounded border border-1 border-gray-300 focus:outline-none"
-        />
+          
+        /> */}
       </div>
       <h1
         className="text-blue-600 hover:underline hover:underline-offset-4 cursor-pointer"

@@ -1,9 +1,15 @@
 # Getting Started with the Application
 
 # Features
-  1. SidePanel Search
-  2. Table Search
-  3. Read | Add | Delete | Delete Selected | Select | Select All in table.
+  1. Navbar with expand / collapse SidePanel
+  2. SidePanel Search
+  3. Table Search
+    - Search Global
+    - Search By UserName
+    - Search By Status
+    - Search By Date From - To
+    - Reset all filters
+  4. Read | Add | Delete | Delete Selected | Select | Select All in table.
 
 ## Requirements
   1. install all packages using `npm install`

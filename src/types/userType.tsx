@@ -14,7 +14,7 @@ export interface tableSearchType {
   setSearchByName: Function;
   searchByStatus: string;
   setSearchByStatus: Function;
-  searchByDate: string;
+  searchByDate: Date[];
   setSearchByDate: Function;
   resetAllFilters: Function;
 }
