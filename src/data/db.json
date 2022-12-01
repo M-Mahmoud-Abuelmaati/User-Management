@@ -1,0 +1,88 @@
+{
+  "sidePanelItems": [
+    {
+      "id": 1,
+      "name": "ATM Settings",
+      "subItem": [
+        {
+          "name": "Demo 1",
+          "path": "/atm/demo1"
+        },
+        {
+          "name": "Demo 2",
+          "path": "/atm/demo2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Business Setup",
+      "subItem": [
+        {
+          "name": "Demo 1",
+          "path": "/business/demo1"
+        },
+        {
+          "name": "Demo 2",
+          "path": "/business/demo2"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "User Management",
+      "subItem": [
+        {
+          "name": "Users",
+          "path": "/users"
+        },
+        {
+          "name": "Profiles",
+          "path": "/profiles"
+        },
+        {
+          "name": "Groups",
+          "path": "/groups"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "name": "Mohamed Mahmoud",
+      "userName": "Mohamed Mahmoud",
+      "email": "mohamed.mahmoud.abuelmaati@gmail.com",
+      "group": "Office",
+      "status": "Active",
+      "createdAt": 1269812055656,
+      "id": 1
+    },
+    {
+      "name": "Ahmed Mahmoud",
+      "userName": "Ahmed Mahmoud",
+      "email": "ahmed.mahmoud.abuelmaati@gmail.com",
+      "group": "Manager",
+      "status": "Active",
+      "createdAt": 1069822077374,
+      "id": 2
+    },
+    {
+      "name": "Mario Loreno",
+      "userName": "Mario Lorenzo",
+      "email": "Mario@gmail.com",
+      "group": "Head Office",
+      "status": "Active",
+      "createdAt": 1669842090338,
+      "id": 3
+    },
+    {
+      "name": "Testing Testing",
+      "userName": "Testing Testing",
+      "email": "test@gm.com",
+      "group": "Manager",
+      "status": "Active",
+      "createdAt": 1669848273032,
+      "id": 4
+    }
+  ]
+}
