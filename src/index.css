@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.react-date-picker,
+.react-date-picker *,
+.react-date-picker *:before,
+.react-date-picker *:after {
+  border-radius: 5px;
+}
+.react-date-picker__wrapper {
+  --tw-border-opacity: 1;
+  border: rgb(209 213 219 / var(--tw-border-opacity)) solid 1px !important;
+}
+.react-date-picker__inputGroup__input:focus {
+  outline: none;
+}
+.react-date-picker__inputGroup__input:invalid {
+  background: white !important;
+}

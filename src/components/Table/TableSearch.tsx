@@ -21,7 +21,7 @@ const TableSearch: FC<tableSearchType> = ({
         placeholder="Search..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="indent-5 text-sm p-2 rounded border w-1/6 border-1 border-gray-300"
+        className="indent-5 text-sm p-2 rounded border w-1/6 border-gray-300"
       />
       <BsSearch className="absolute top-6.5 left-7" size={14} />
       <input
@@ -29,7 +29,7 @@ const TableSearch: FC<tableSearchType> = ({
         placeholder="User Name"
         value={searchByName}
         onChange={(e) => setSearchByName(e.target.value)}
-        className="text-sm p-2 rounded border border-1 border-gray-300"
+        className="text-sm p-2 rounded border border-gray-300"
       />
       <div className="relative pt-3.5 pb-3.5">
         <label
@@ -40,7 +40,7 @@ const TableSearch: FC<tableSearchType> = ({
         </label>
         <select
           id="selection"
-          className="text-sm p-2 rounded border border-1 border-gray-300 focus:outline-none"
+          className="text-sm p-2 rounded border border-gray-300 focus:outline-none"
           value={searchByStatus}
           onChange={(e) => setSearchByStatus(e.target.value)}
         >
