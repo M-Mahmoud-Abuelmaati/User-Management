@@ -19,7 +19,7 @@ const Index: FC = () => {
 
   useEffect(() => {
     const panel = localStorage.getItem('panel');
-    if (panel !== 'true') {
+    if (panel && panel !== 'true') {
       setOpenSidePanel(false);
     }
   }, []);
