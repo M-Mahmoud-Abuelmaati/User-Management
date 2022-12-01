@@ -35,7 +35,9 @@ const SidePanel: FC<{
         .indexOf(search.toLowerCase()) !== -1;
 
     const filteredPanelSearch = sidePanelItems.filter(searchFilter);
-    setFilteredSidePanelItems(filteredPanelSearch);
+    setTimeout(() => {
+      setFilteredSidePanelItems(filteredPanelSearch);
+    }, 3100);
     setNoSearch('Searching');
   }, [sidePanelItems, search]);
 
